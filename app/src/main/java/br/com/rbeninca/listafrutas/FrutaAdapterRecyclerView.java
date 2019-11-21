@@ -4,10 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecyclerView.MyViewHolder> {
@@ -37,6 +41,15 @@ class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecycler
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Fruta fruta = mDataset[position];
+
+        NumberFormat nf = new DecimalFormat("#,###.00");
+
+        holder.tvCodigo.setText(Integer.toString(fruta.getCodigo()));
+        holder.tvNome.setText(fruta.getNome());
+        holder.tvPreco.setText(nf.format (fruta.getPreco()));
+        holder.tvPrecoVenda.setText(nf.format (fruta.getPreco_venda()));
+        holder.imgView.setImageResource(fruta.getImagem());
 
     }
 
@@ -47,8 +60,21 @@ class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecycler
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
+
+        TextView tvCodigo;
+        TextView tvNome;
+        TextView tvPreco;
+        TextView tvPrecoVenda;
+        ImageView imgView;
+
+        public MyViewHolder(@NonNull View convertView) {
+            super(convertView);
+
+             tvCodigo = (TextView) convertView.findViewById(R.id.tvCodigo);
+             tvNome = (TextView) convertView.findViewById(R.id.tvNome);
+             tvPreco =  (TextView) convertView.findViewById(R.id.tvPreco);
+             tvPrecoVenda =(TextView) convertView.findViewById(R.id.tvPrecoVenda);
+             imgView = (ImageView) convertView.findViewById(R.id.imageView);
         }
     }
 
