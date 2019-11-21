@@ -42,7 +42,8 @@ class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecycler
 
     @Override
     public int getItemCount() {
-        return 5;
+
+        return mDataset.length;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
