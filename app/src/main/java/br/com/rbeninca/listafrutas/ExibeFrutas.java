@@ -33,5 +33,7 @@ public class ExibeFrutas extends AppCompatActivity {
         textViewNome.setText(frutaController.FRUTAS[id].getNome());
         textViewPreco.setText(decimalFormat.format(frutaController.FRUTAS[id].getPreco()));
         imageView.setImageResource(frutaController.FRUTAS[id].getImagem());
+
+
     }
 }
