@@ -41,6 +41,7 @@ class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecycler
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
         Fruta fruta = mDataset[position];
 
         NumberFormat nf = new DecimalFormat("#,###.00");
@@ -56,6 +57,7 @@ class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecycler
     @Override
     public int getItemCount() {
 
+
         return mDataset.length;
     }
 
@@ -70,14 +72,15 @@ class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecycler
         public MyViewHolder(@NonNull View convertView) {
             super(convertView);
 
-             tvCodigo = (TextView) convertView.findViewById(R.id.tvCodigo);
-             tvNome = (TextView) convertView.findViewById(R.id.tvNome);
-             tvPreco =  (TextView) convertView.findViewById(R.id.tvPreco);
-             tvPrecoVenda =(TextView) convertView.findViewById(R.id.tvPrecoVenda);
-             imgView = (ImageView) convertView.findViewById(R.id.imageView);
+            tvCodigo = (TextView) convertView.findViewById(R.id.tvCodigo);
+            tvNome = (TextView) convertView.findViewById(R.id.tvNome);
+            tvPreco =  (TextView) convertView.findViewById(R.id.tvPreco);
+            tvPrecoVenda = (TextView) convertView.findViewById(R.id.tvPrecoVenda);
+            imgView = (ImageView) convertView.findViewById(R.id.imageView);
+
         }
     }
 
-    
+
 
 }
